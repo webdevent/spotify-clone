@@ -1,0 +1,20 @@
+
+.album-page {
+    background: linear-gradient(to bottom, purple 40%, transparent,transparent) ;
+}
+
+.album-page-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 50px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    background-repeat: no-repeat;
+}
+
+.album-pfp {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}

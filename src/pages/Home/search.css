@@ -1,0 +1,127 @@
+.search-box {
+    width: 55%;
+    height: 45px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.219);
+    margin: 0px auto;
+    border: 2px solid white;
+    transition: 500ms all ease-in;
+}
+
+.search-box:hover {
+    background-color: rgba(39, 39, 39, 0.219);
+    border: 1px solid grey;
+}
+
+.search-input {
+    width: 90%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    color: white;
+    padding: 0px 5px;
+}
+
+.search-input {
+    outline: 0;
+    border: none;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.browse-btn {
+    border-left: 1px solid white;
+    color: white; 
+}
+
+.browse-btn:hover::after {
+    position: absolute;
+    top: 10%;
+    right: 16%;
+    content: "Browse";
+    text-align: center;
+    width: 70px;
+    height: 23px;
+    font-size: 13px;
+    background-color: rgb(49, 49, 49);
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px black;
+}
+
+.close {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.384);
+    padding: 5px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 7%;
+}
+
+.close:hover {
+    width: 16px;
+    height: 16px;
+}
+
+.search-listing {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.searched-song {
+    max-width: 250px;
+    min-width: 180px;
+    max-height: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.searched-song:hover {
+    background: hsla(0, 0%, 19%, 0.685);
+}
+
+.search-song-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.recommendation-listing {
+    margin-top: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.recomendation-items {
+    display: none;
+    padding: 5px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.37);
+    width: fit-content;
+    height: 30px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.artist-image {
+    width: 150px;
+    height: 150px;
+    min-width: 100px;
+    min-height: 100px;
+    border-radius: 50%;
+    box-shadow: 2px 5px 5px black,
+     -2px -5px 5px black;
+}

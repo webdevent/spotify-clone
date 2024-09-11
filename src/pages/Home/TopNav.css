@@ -1,0 +1,71 @@
+.topnav {
+    background: linear-gradient(to bottom ,rgba(43, 43, 43, 0.397), rgb(14, 14, 14));
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+.topnav a {
+    text-decoration: none;
+    margin: 0px 10px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.search-route {
+    position: relative;
+}
+
+.search-route:hover::after {
+    position: absolute;
+    top: 110%;
+    left: 10%;
+    content: "Search";
+    color: white;
+    text-align: center;
+    width: 50px;
+    height: 25px;
+    font-size: 13px;
+    background-color: rgb(49, 49, 49);
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px black;
+}
+
+.home-route {
+    position: relative;
+}
+
+.home-route:hover::after {
+     position: absolute;
+    top: 110%;
+    left: 10%;
+    content: "Home";
+    color: white;
+    text-align: center;
+    width: 50px;
+    height: 25px;
+    font-size: 13px;
+    background-color: rgb(49, 49, 49);
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px black;
+}
+
+
+.navlist {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    justify-content: left;
+    padding: 0px;
+    margin: 0px;
+}
+
+.navlist li {
+    margin: auto 10px;
+    padding: 10px;
+    align-items: center;
+}
+

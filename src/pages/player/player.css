@@ -1,0 +1,135 @@
+.player {
+    background: transparent;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    justify-content: space-between;
+    z-index: 5;
+    overflow: hidden;
+}
+
+.player-controls {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: 23px;
+    width: 100%;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.player-play-btn {
+    color: white;
+    font-size: 32px;
+}
+
+.player-pause-btn {
+    color: white;
+    font-size: 32px;
+}
+
+.player-play-btn:hover, .player-pause-btn:hover {
+    transform: scale(1.2);
+    color:#ccc;
+}
+
+
+
+.controls {
+    cursor: pointer;
+    color: gray;
+}
+
+.controls:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+.track-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+}
+
+.track-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.track-info-detail {
+    height: fit-content;
+}
+
+.sub-player-controls {
+    display: flex;
+    color: #ccc;
+    justify-content: space-between;
+    width: 250px;
+    align-items: center;
+    gap: 10px;
+}
+
+.progress-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20;
+}
+
+.range {
+    width: 90%;
+    height: 4px;
+    appearance: none;
+    border-radius: 5px;
+    background: #838383;
+    margin: 0px 5px;
+
+    overflow: hidden;
+}
+
+/*rgb(49, 180, 49)*/
+
+.range::-webkit-slider-thumb {
+   appearance: none;
+   height: 15px;
+   width: 15px;
+   background: white;
+   border-radius: 50%;
+   cursor: pointer;
+   box-shadow: -407px 0 0 407px white;
+}
+
+.range::-webkit-slider-thumb:hover {
+    box-shadow:  -407px 0 0 407px rgb(49, 180, 49);
+}
+.volume {
+    width: 100%;
+    height: 4px;
+    overflow: hidden;
+    appearance: none;
+    border-radius: 5px;
+    background: #838383;
+}
+.volume::-webkit-slider-thumb {
+    appearance: none;
+    height: 15px;
+    width: 15px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: -407px 0 0 407px rgb(49, 180, 49);
+}
+
+.volume::-webkit-slider-thumb:hover {
+    box-shadow:  -407px 0 0 407px rgb(49, 180, 49);
+}
+
+.contain-controls {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

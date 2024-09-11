@@ -1,0 +1,121 @@
+.playerlist {
+    margin: 0px;
+    padding: 0px;
+    min-width: 100%;
+    background: rgba(49, 49, 49, 0.226);
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+}
+
+
+
+.top-detail-cover {
+    width: 200px;
+    height: 150px;
+    border-radius: 5px;
+    box-shadow: 2px 1px 7px black;
+    object-fit: cover;
+}
+
+.playlist-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 150px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.playlist-time {
+    color: #ccc;
+}
+
+.menu {
+    font-size: 25px;
+    color: rgba(212, 212, 212, 0.795);
+    position: relative;
+}
+.menu:hover {
+    color: rgb(255, 255, 255);
+    font-size: 27px;
+}
+
+.menu:hover::after{
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    content: "menu";
+    color: white;
+    text-align: center;
+    width: 50px;
+    height: 25px;
+    font-size: 13px;
+    background-color: rgb(49, 49, 49);
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px black;
+}
+
+.track-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: bold;
+    color: rgb(148, 148, 148);
+    border-bottom: 1px solid grey;
+    padding: 10px;
+    margin: 10px;
+}
+
+.tracks {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.tracks:hover {
+    background-color: hsla(0, 0%, 37%, 0.671);
+}
+
+.track-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ccc;
+    width: 300px;
+}
+
+.controls-layout {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    
+}
+
+.playerlist-btn{
+    position: relative;
+}
+
+.playerlist-btn:hover::after {
+    position: absolute;
+    bottom: -50%;
+    left: 5%;
+    content: "Play";
+    color: white;
+    text-align: center;
+    width: 50px;
+    height: 25px;
+    font-size: 13px;
+    background-color: rgb(49, 49, 49);
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px black;
+}

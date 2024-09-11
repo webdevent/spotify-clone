@@ -1,0 +1,127 @@
+.popular-artist {
+    width: 100%;
+    height: 310px;
+    overflow: hidden;
+}
+
+
+.top-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 5px 0px;
+    padding-top: 40px;
+}
+
+.title {
+    font-size: 25px;
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0px 10px;
+    font-weight: bold;
+}
+
+.show-all {
+    color: #ccc;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.show-all:hover {
+    text-decoration: underline;
+}
+
+
+
+.deck {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0px 10px;
+    overflow: hidden;
+}
+
+.card {
+    max-width: 250px;
+    min-width: 180px;
+    max-height: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.card:hover {
+    background: hsla(0, 0%, 19%, 0.685);
+}
+
+
+.artist-pfp {
+    width: 150px;
+    height: 150px;
+    min-width: 100px;
+    min-height: 100px;
+    border-radius: 50%;
+    box-shadow: 2px 7px 8px rgb(0, 0, 0),
+     -2px -7px 8px rgba(0, 0, 0, 0.841);
+}
+
+.artist-name {
+    font-size: 16px;
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.hide-btn {
+    display: none;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+}
+
+.play-btn {
+    background-color: #43c947;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-10px);
+    /*transition: 5s ease-in;*/
+}
+
+.show {
+    display: flex;
+}
+
+.play-btn:hover {
+    background-color: #5be748;
+}
+
+.play-btn-icon {
+    font-size: 20px;
+    margin: auto;
+}
+
+.play-btn:hover:after {
+    content:attr(data-attr);
+    position: absolute;
+    bottom: -30%;
+    top: -70%;
+    color: white;
+    text-align: center;
+    width: 120px;
+    height: 25px;
+    font-size: 13px;
+    background-color: rgb(49, 49, 49);
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px black;
+}
+
