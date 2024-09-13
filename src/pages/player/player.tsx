@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, useLayoutEffect } from 'react'
 import './player.css'
 import song from "../Home/songs.js"
 import testImage from "../Home/pictures/music-placeholder.png"
@@ -9,24 +9,12 @@ function Player({ selectedSong }) {
     
     const songPlayerRef = useRef(null);
     const loopBtnRef = useRef(null);
-    const [isPlaying, setIsPlaying] = useState(false)
     const totalTimeElementRef = useRef(null)
-   
+   const [durationState, setDurationState] = useState(null)
     const playButtonRef = useRef(null);
     const pauseButtonRef = useRef(null)
     const [artistInfo, setArtitInfo] = useState(null)
     
-    const checkPlay = () => {
-       if(!isPlaying){
-            pauseButtonRef.current.style.display = 'block'
-            playButtonRef.current.style.display = 'none'
-            console.log(isPlaying)
-       } else {
-            pauseButtonRef.current.style.display = 'none'
-            playButtonRef.current.style.display = 'block'
-            console.log(isPlaying)
-       }
-    }
     
     //updates the range bar with the duration of the current playing song
     const musicProgress = () => {
@@ -36,7 +24,7 @@ function Player({ selectedSong }) {
         const durationInput = document.getElementById('music-duration');
         durationInput.value = progress;
     }
-
+    //allows the user to manipulate the song progress
     const handleRangeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newValue = e.target.value;
         const duration = songPlayerRef.current.duration;
@@ -44,29 +32,40 @@ function Player({ selectedSong }) {
         songPlayerRef.current.currentTime = newTime;
       };
    
+
+    //updates the current time span with how much time the song has left
     const updateTimeLeft = () => {
         if (songPlayerRef.current) {
                 const currentTime = songPlayerRef.current.currentTime;
                 const duration = songPlayerRef.current.duration;
                 const timeLeft = duration - currentTime;
                 musicProgress()
-               
                 // Convert timeLeft to minutes and seconds
                 const minutes = Math.floor(timeLeft / 60);
                 const seconds = Math.floor(timeLeft % 60);
                 // Update the total-time element with the time left
                 const currentTimeElement = document.querySelector('.current-time');
                 if (currentTimeElement) {
-                    currentTimeElement.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;   
+                    currentTimeElement.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                    
                 }
         }
     };
 
-    
+    const duration = () => {
+        const duration = songPlayerRef.current.duration;
+        const minutes = Math.floor(duration / 60);
+        const seconds = Math.floor(duration % 60);
+        const durationTimeElement = document.querySelector('.total-time');
+        if (durationTimeElement) {
+            durationTimeElement.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;   
+        }
+        console.log(minutes)   
+    }
+   
     useEffect(() => {
         const artist = song.find((artist) => artist.name  === selectedSong)//Searchs the songs Array for the selected song
         setArtitInfo(artist);
-        //checkPlay()
         const intervalId = setInterval(updateTimeLeft, 1000);
         return () => {
             clearInterval(intervalId);
@@ -81,8 +80,8 @@ function Player({ selectedSong }) {
                 <div className="track-info">
                 <img src={artistInfo.image} className='track-img'/>
                 <div className="track-info-detail">
-                    <audio id='song-player' autoPlay  ref={songPlayerRef}  key={artistInfo.song}>
-                        <source src={artistInfo.song} type = "audio/mpeg"/>
+                    <audio id='song-player' autoPlay  ref={songPlayerRef}  key={artistInfo.song} onLoad={() => duration()}>
+                        <source src={artistInfo.song} type = "audio/mpeg" />
                     </audio>
                     <h1 className='m-0 text-white text-lg font-bold'>{artistInfo.name}</h1>
                     <span className='m-0 text-gray-400 text-s'>{artistInfo.artist}</span>
@@ -101,16 +100,16 @@ function Player({ selectedSong }) {
                         <FontAwesomeIcon icon={faBackwardStep} />
                     </button>
                     <button className="player-play-btn" ref={playButtonRef}  onClick={() => {
-                        songPlayerRef.current.pause();
-                        setIsPlaying(false)
-                        checkPlay()
+                        songPlayerRef.current.play();
+                        pauseButtonRef.current.style.display = 'block'
+                        playButtonRef.current.style.display = 'none'
                         }}>
                         <FontAwesomeIcon icon={faCirclePlay} />
                     </button>
                     <button className="player-pause-btn" ref={pauseButtonRef} onClick={() => {
-                        songPlayerRef.current.play();
-                        setIsPlaying(true)
-                        checkPlay()
+                        songPlayerRef.current.pause();
+                        pauseButtonRef.current.style.display = 'none'
+                        playButtonRef.current.style.display = 'block'
                         }}>
                         <FontAwesomeIcon icon={faCirclePause} />
                     </button>
@@ -196,8 +195,8 @@ function Player({ selectedSong }) {
                     <button className="previous-btn controls">
                         <FontAwesomeIcon icon={faBackwardStep} />
                     </button>
-                    <button className="player-play-btn" >
-                        <FontAwesomeIcon icon={faCirclePlay} />
+                    <button className="player-pause-btn" >
+                        <FontAwesomeIcon icon={faCirclePause} />
                     </button>
                     <button className="forward-btn controls">
                         <FontAwesomeIcon icon={faForwardStep} />

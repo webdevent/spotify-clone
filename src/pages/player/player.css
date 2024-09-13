@@ -23,6 +23,7 @@
 .player-play-btn {
     color: white;
     font-size: 32px;
+    display: none;
 }
 
 .player-pause-btn {

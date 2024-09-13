@@ -2,6 +2,7 @@ import chrisBrown from './pictures/chris-brown.jpg'
 import chrisBrownCover from './pictures/chrisBrown-sensational.jpeg'
 import chrisBrownCoverTwo from "./pictures/chris-brown-dont-judge-img.jpeg"
 import chrisBrownCoverThree from './pictures/chris-brown-freaky-friday.png'
+import chrisBrownAlbumCover from "./pictures/cbcover.png"
 import summerWalker from './pictures/summer-walker.jpg'
 import summerWalkerCover from './pictures/summerWalker-Playing_Games.png'
 import summerWalkerCoverTwo from "./pictures/summer-walker-thru-img.jpeg"
@@ -30,6 +31,10 @@ import brysonTillerCoverThree from './pictures/bryson-tiller-outta-time-img.jpg'
 import wizkhalifeImage from './pictures/wizkhaimage.jpg'
 import wizkhalifeCover from './pictures/wizkhacover.jpg'
 import wizkhalifeCoverTwo from "./pictures/wizkhalifa- see-you-again-img.jpg"
+import kendrickLamarImg from './pictures/kendrick-lamar-img.jpeg'
+import kendrickLamarCover from './pictures/ken-lam-not-like-us.jpeg'
+import eddyGBombaImg from './pictures/eddygbomba-img.jpeg'
+import eddyGBombaCover from "./pictures/eddygbomba-song-img.jpg"
 
 const artistList = [
   { 
@@ -52,7 +57,27 @@ const artistList = [
           id: 3,
           songname: 'Freaky Friday',
           songimage: chrisBrownCoverThree
-        }
+        },
+        {
+          id: 4,
+          songname: "Lower Body FT Davido",
+          songimage: chrisBrownAlbumCover
+      },
+      {
+          id: 6,
+          songname: "Nose Dive",
+          songimage: chrisBrownAlbumCover
+      },
+      {
+          id: 7,
+          songname: "Under Influence",
+          songimage: chrisBrownAlbumCover
+      },
+      {
+          id: 8,
+          songname: "Over Time",
+          songimage: chrisBrownAlbumCover
+      },
     ]
   },
   {
@@ -169,7 +194,7 @@ const artistList = [
     id: 7,
     name: "Rajah Wild",
     image: rajahWild,
-    color: 'rgba(0, 0, 255, 0.205)',
+    color: 'rgb(214, 25, 0, 0.500)',
     songs: [
       {
         id: 1,
@@ -203,14 +228,20 @@ const artistList = [
         id: 3,
         songname: 'Outta Time',
         songimage: brysonTillerCoverThree
-      }
+      },
+      {
+        id: 4,
+        songname: 'Sorry not sorry',
+        artistname: 'Bryson Tiller',
+        songimage: brysonTillerCover,
+    }
     ]
   },
   {
     id: 9,
     name: "Wiz khalifa",
     image: wizkhalifeImage,
-    color: 'rgba(0, 0, 255, 0.205)',
+    color: 'rgba(232, 39, 197, 0.500)',
     songs: [
       {
           id: 1,
@@ -222,6 +253,37 @@ const artistList = [
           songname: "See You Again",
           songimage: wizkhalifeCoverTwo,
       }
+    ]
+  },
+  {
+    id: 10,
+    name: "Kendrick Lamar",
+    image: kendrickLamarImg,
+    color: 'rgba(224, 222, 224, 0.500)',
+    songs: [
+      {
+          id: 1,
+          songname: "Not Like Us",
+          songimage: kendrickLamarCover,
+      },
+      {
+          id: 2,
+          songname: "Humble",
+          songimage: wizkhalifeCoverTwo,
+      }
+    ]
+  },
+  {
+    id: 9,
+    name: "Eddy G Bomba",
+    image: eddyGBombaImg,
+    color: 'rgba(0, 0, 255, 0.205)',
+    songs: [
+      {
+          id: 1,
+          songname: "NO CAP",
+          songimage: eddyGBombaCover,
+      },
     ]
   }
 ]

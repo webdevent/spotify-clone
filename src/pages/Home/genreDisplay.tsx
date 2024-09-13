@@ -31,6 +31,7 @@ function GenreDisplay() {
                     </Link>
                 ))}
             </ul>
+            <span className="create-comment text-3xl font-bold mt-10 text-white">By <a href="https://webdevent.github.io/Portfolio/" className="by-user text-green-600">Daniel Ennis</a></span>
         </div>
     )
 }

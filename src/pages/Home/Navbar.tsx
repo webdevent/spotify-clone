@@ -7,17 +7,18 @@ import { faMagnifyingGlass, faList, faPlus, faArrowRight, faLayerGroup } from '@
 
 function Navbar() {
 
-    function collapseNav() {
-        const nav = document.querySelector('.navbar');
-        nav.classList.toggle('collapse');
-    }
+    
     return (
         <nav className="navbar">
             <TopNav/>
             <div className='bottom-navbar'>
                 <div className="flex flex-row justify-between m-2">
-                    <div className="flex-row">
-                        <h3><FontAwesomeIcon icon={faLayerGroup} /> Your Library</h3>
+                    <div className="flex-row" onClick={() => {
+                        const nav = document.querySelector('.navbar');
+                        nav.style.width = '100px'
+                        nav.style.overFlow = 'hidden'
+                    }}>
+                        <h3 className='library-btn'><FontAwesomeIcon icon={faLayerGroup} /> Your Library</h3>
                     </div>
                     <div className="flex flex-row items-center gap-3">
                         <FontAwesomeIcon icon={faPlus} className='text-gray-400 text-xl p-1 hover:bg-gray-700 rounded-full h-5 w-5' aria-details=''/>
