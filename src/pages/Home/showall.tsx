@@ -2,24 +2,23 @@
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
-import artistList from "./Artist.js"
-import albumList from "./Album.js"
+import artistList from "./Artist.ts"
 
 function ShowAll() {
     
     return(
         <div className="container">
-                <ul className="flex flex-wrap">
+                <ul className="flex flex-wrap w-full">
                     {artistList.map((artist, index) => (
                     <li className="card" key={index}
                         onMouseEnter={(event) => {
-                            const card = event.target.closest(".card");
+                            const card = (event.target as HTMLElement).closest(".card");
                             const btn = card.querySelector('.play-btn');
                             btn.style.display = "flex"
                             btn.style.bottom = "30%"
                         }}
                         onMouseLeave={(event) => {
-                            const card = event.target.closest(".card");
+                            const card = (event.target as HTMLElement).closest(".card");
                             const btn = card.querySelector('.play-btn');
                             btn.style.display = "none"
                             btn.style.bottom = "10%"

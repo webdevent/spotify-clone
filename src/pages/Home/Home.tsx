@@ -1,12 +1,12 @@
-import {useState, useEffect} from 'react'
-import Navbar from "./Navbar.tsx";
-import GenrePage from '../player/Genrepage.tsx';
-import Player from '../player/player.tsx'
-import HomePage from "./homepage.tsx"
-import PlayerList from '../player/playlist.tsx';
-import AlbumPage from '../player/albumpage.tsx';
-import Search from './search.tsx';
-import ShowAll from './showall.tsx';
+import {useState} from 'react'
+import Navbar from "./Navbar.js";
+import GenrePage from '../player/Genrepage.js';
+import Player from '../player/player.js'
+import HomePage from "./homepage.js"
+import PlayerList from '../player/playlist.js';
+import AlbumPage from '../player/albumpage.js';
+import Search from './search.js';
+import ShowAll from './showall.js';
 import { Route, Routes } from 'react-router-dom'
 import "./Home.css";
 

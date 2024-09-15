@@ -25,7 +25,7 @@ function Player({ selectedSong }) {
         durationInput.value = progress;
     }
     //allows the user to manipulate the song progress
-    const handleRangeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleRangeChange = (e) => {
         const newValue = e.target.value;
         const duration = songPlayerRef.current.duration;
         const newTime = (newValue / 100) * duration;

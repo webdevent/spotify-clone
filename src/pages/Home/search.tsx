@@ -1,11 +1,21 @@
-import react, {useEffect, useState, useRef} from 'react'
+import {useEffect, useState, useRef} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFolderOpen, faMagnifyingGlass, faX, faPlay } from '@fortawesome/free-solid-svg-icons'
+import { faFolderOpen, faMagnifyingGlass, faPlay } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
-import artistList from './Artist.js'
-import albumList from './Album.js'
+import artistList from './Artist.ts'
+import albumList from './Album.ts'
 import './search.css'
 
+interface Artist {
+    name: string,
+    image: string,
+}
+
+interface Album {
+    image: string,
+    title: string,
+    artist: string
+}
 function Search() {
     const [searchTerm, setSearchTerm] = useState([]);
     const [searchTermAlbum, setSearchTermAlbum] = useState([])
@@ -53,7 +63,7 @@ function Search() {
             </div>
             <h1 className="title artist-title">artists</h1>
             <ul className="search-listing">
-                {searchTerm.map((artist, index) => (
+                {searchTerm.map((artist: Artist, index: number) => (
                 <li  key={index} className="searched-song"
                 onMouseEnter={(event) => {
                     const card = event.target.closest(".searched-song");
@@ -83,7 +93,7 @@ function Search() {
             </ul>
             <h1 className="title">albums</h1>
             <ul className="search-albums">
-                {searchTermAlbum.map((album, index) => {
+                {searchTermAlbum.map((album: Album, index: number) => {
                     return (
                         <Link to={`/album/${album.title}`} key={index}>
                             <li className='card'  onMouseEnter={(event) => {

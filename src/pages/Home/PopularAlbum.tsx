@@ -5,7 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
 import albumList from './Album.js'
 
-
+interface Album {
+    image: string,
+    title: string,
+    artist: string
+}
 function PopularAlbum() {
 
     
@@ -16,7 +20,7 @@ function PopularAlbum() {
                 <p className='show-all'>Show all</p>
             </div>
             <ul className='deck'>
-                {albumList.map((album, index) => {
+                {albumList.map((album: Album, index: number) => {
                     return (
                         <Link to={`/album/${album.title}`} key={index}>
                             <li className='card'  onMouseEnter={(event) => {

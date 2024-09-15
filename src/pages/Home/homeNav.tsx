@@ -1,4 +1,4 @@
-import react, { useEffect, useRef } from "react"
+import { useRef } from "react"
 import { faAngleLeft, faAngleRight} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleDown, faBell } from '@fortawesome/free-regular-svg-icons'
@@ -6,9 +6,7 @@ import "./homeNav.css"
 
 function HomeNav() {
     const headerRef = useRef(null);
-    const home = document.querySelector('.home-right')
-    
-    
+ 
     return (
             <div className="home-nav-top" ref={headerRef}>
                     <div className="home-top-left">

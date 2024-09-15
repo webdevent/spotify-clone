@@ -1,9 +1,14 @@
 import './Navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import artists from './Artist.js'
+import artists from './Artist.ts'
 import TopNav from './TopNav.tsx'
 import { Link } from 'react-router-dom'
 import { faMagnifyingGlass, faList, faPlus, faArrowRight, faLayerGroup } from '@fortawesome/free-solid-svg-icons'
+
+interface artistList {
+    image: string,
+    name: string,
+}
 
 function Navbar() {
 
@@ -13,11 +18,7 @@ function Navbar() {
             <TopNav/>
             <div className='bottom-navbar'>
                 <div className="flex flex-row justify-between m-2">
-                    <div className="flex-row" onClick={() => {
-                        const nav = document.querySelector('.navbar');
-                        nav.style.width = '100px'
-                        nav.style.overFlow = 'hidden'
-                    }}>
+                    <div className="flex-row">
                         <h3 className='library-btn'><FontAwesomeIcon icon={faLayerGroup} /> Your Library</h3>
                     </div>
                     <div className="flex flex-row items-center gap-3">
@@ -35,7 +36,7 @@ function Navbar() {
                             </button> 
                         </div> 
                     </li>
-                    {artists.map((artist, index) => {
+                    {artists.map((artist: artistList, index: number) => {
                         return(
                             <Link to={`/artist/${artist.name}`}  key={index}>
                                 <li className="recent-artist">

@@ -1,8 +1,8 @@
 import {useEffect} from 'react'
 import PopularArtist from "./PopularArtist.tsx";
-import PopularAlbum from "./PopularAlbum.tsx"
-import HomeNav from "./homeNav.tsx"
-import GenreDisplay from "./genreDisplay.tsx";
+import PopularAlbum from "./PopularAlbum.js"
+import HomeNav from "./homeNav.js"
+import GenreDisplay from "./genreDisplay.js";
 
 function HomePage() {
    useEffect(() => {

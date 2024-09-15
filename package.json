@@ -1,10 +1,13 @@
 {
+  "homepage": "https://github.com/webdevent/spotify-clone.git",
   "name": "e-commerce",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"

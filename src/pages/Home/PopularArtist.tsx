@@ -2,9 +2,13 @@
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay } from '@fortawesome/free-solid-svg-icons'
-import artistList from "./Artist.js"
+import artistList from "./Artist.ts"
 import './PopularArtist.css'
 
+interface Artist {
+    name: string,
+    image: string,
+}
 function PopularArtist() {
    
 
@@ -16,7 +20,7 @@ function PopularArtist() {
             </div>
             <div className="popular-artist">
                 <ul className="deck">
-                    {artistList.map((artist, index) => (
+                    {artistList.map((artist: Artist, index: number) => (
                         
                     <li className="card" key={index}
                         onMouseEnter={(event) => {

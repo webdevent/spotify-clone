@@ -1,14 +1,20 @@
 import {Link} from "react-router-dom"
-import genreList from './genre.js'
+import genreList from './genre.ts'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay, faPlus, faEllipsis } from '@fortawesome/free-solid-svg-icons'
 import "./genreDisplay.css"
+
+interface Genre {
+    name: string
+    cover: string
+    image: string
+}
 
 function GenreDisplay() {
     return(
         <div className="genreDisplay">
             <ul className="genre-grid">
-                {genreList.map((genre, index) => (
+                {genreList.map((genre: Genre, index: number) => (
                     <Link to={`/genre/${genre.name}`} key={index}>
                         <li className="genre-diplay-card">
                         <img src={genre.cover} alt="Album Cover" className="genre-cover"/>
