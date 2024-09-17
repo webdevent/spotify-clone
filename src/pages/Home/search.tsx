@@ -7,14 +7,34 @@ import albumList from './Album.ts'
 import './search.css'
 
 interface Artist {
+    id: number,
     name: string,
     image: string,
+    color: string,
+    songs: [
+      {
+          id: number,
+          songname: string,
+          songimage: string,
+      },
+    ]
 }
 
 interface Album {
-    image: string,
-    title: string,
-    artist: string
+        id: number,
+        title: string,
+        artist: string,
+        image: string,
+        color: string,
+        songs: [
+            {
+                id: number,
+                artistname: string,
+                songname: string,
+                cover: string,
+                duration: string
+            },
+        ]
 }
 function Search() {
     const [searchTerm, setSearchTerm] = useState([]);
